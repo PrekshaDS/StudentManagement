@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information</title>
+</head>
+<body>
+    <h2>Student Information Management</h2>
+
+    <p><strong>Student ID:</strong> {{ student.id }}</p>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+
+    <h3>Update Details</h3>
+
+    <form action="/students/update" method="POST">
+        <input name="name"
+               value="{{ student.name }}" required>
+        <br><br>
+
+        <input name="department"
+               value="{{ student.department }}" required>
+        <br><br>
+
+        <button type="submit">Update Details</button>
+    </form>
+
+    <h3>Delete Account</h3>
+
+    <form action="/students/delete" method="POST"
+          onsubmit="return confirm('Delete your account?');">
+        <button type="submit">Delete Account</button>
+    </form>
+
+    <p><a href="/logout">Logout</a></p>
+    <p><a href="/">Home</a></p>
+</body>
+</html>
